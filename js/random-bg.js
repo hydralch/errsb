@@ -11,7 +11,7 @@
 
   async function tryListJson(){
     try{
-      const res = await fetch('/images/list.json', {cache: 'no-store'});
+      const res = await fetch('/errsb/images/list.json', {cache: 'no-store'});
       if(!res.ok) return null;
       const data = await res.json();
       if(Array.isArray(data) && data.length) return data.map(p => (p.startsWith('/')? p : `/images/${p}`));
