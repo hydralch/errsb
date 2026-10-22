@@ -21,7 +21,7 @@
 
   async function tryDirectoryListing(){
     try{
-      const res = await fetch('/images/', {cache: 'no-store'});
+      const res = await fetch('/errsb/images/', {cache: 'no-store'});
       if(!res.ok) return null;
       const text = await res.text();
       // Look for hrefs to common image extensions
@@ -52,7 +52,7 @@
 
   if(!images || !images.length){
     // fallback: try to use a single default image file
-    const fallback = '/images/default.jpg';
+    const fallback = '/errsb/images/default.jpg';
     try{
       await preloadImage(fallback);
       images = [fallback];
